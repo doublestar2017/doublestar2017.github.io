@@ -1,0 +1,93 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8" import="java.sql.*"%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Article</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+</head>
+<body>
+	<div class="write"></div>
+	<div id="content">
+		<div id="header"></div>
+		<div id="main">
+		
+			<div id="b">
+				<%String name=(String)session.getAttribute("me");
+					if(name==null){%>
+					<span class="btn1"></span> 
+					<span class="btn2"></span>
+					<%}else{ out.println("<br/><br/>欢迎您，"+name+"!"+"&nbsp;&nbsp;");} %>				
+			</div>
+			
+			<div class="tag">
+				<hr />
+				&nbsp;&nbsp;<a href="index.jsp" style="color: white;">首页</a> / <a
+					href="min.jsp" style="color: white;">HOT</a> / 帖子
+				<hr />
+			</div>
+			<div class="text">
+				<div class="ar_title">
+					<h1 style="text-align: center; color: white;">无题</h1>
+				</div>
+				<div class="writer" style="text-align: right;">佚名</div>
+				<div class="ar_content">
+					<p style="text-indent: 2em;">黑暗，无尽的黑暗。</p>
+					<p style="text-indent: 2em;">
+						周围一片漆黑，我在暗中独行。日复一日，年复一年。独行的过程中十分枯燥，我学会了思考（人是一根能思想的芦苇）。我曾问过心，我为何如此孤独。心告诉我，因为我锁住了它。不管多么躁动的心，在时间的消磨下，也会平静下来，更何况时间的流逝还伴随着无尽的黑暗。我听后，笑了。我锁住了它？我锁住了自己？其实不然吧。世人都因我的疯狂而避开我，我却不因自己的疯狂放弃自己。疯狂么？没有。我只是在做着自己的事，一些与众不同的事。异类是如何产生的？其实不就是它超出了世俗的眼光，与常理背道而驰吗？因此，我成为了异类。而，他们抛弃了我。</p>
+					<p style="text-indent: 2em;">黑暗中不是没有人，只是没有将我视作正常人的人。我曾努力迎合世俗的，违背内心的驱使。但，我失败了。一种悲痛在心底处呻吟，一声一声，绞痛着我的心。所以，我为了安抚它，锁上了它吗？呵！心说的没错，我锁住了自己。所以，独行继续……</p>
+					<p style="text-indent: 2em;">行走在漆黑的夜，一直一直……</p>
+
+				</div>
+			</div>
+			<br />
+			
+			<form action="message.jsp" method="post" id="f">
+				<div class="mgs">
+					<h3 style="text-indent: 4em;">回帖：</h3>
+					<br />
+					<textarea rows="5" cols="60" id="a_msg" name="a_text">说点什么吧！</textarea>
+					<input type="submit" value="提交" name="submit" class="butt a_butt"
+						style="margin: 30px 0 0 380px;" />
+				</div>
+			</form>
+			
+<%
+			try{
+				
+				request.setCharacterEncoding("utf-8");
+				
+				Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+				Connection conn=DriverManager.getConnection("jdbc:odbc:BBS","","");
+				Statement
+				smt=conn.createStatement();
+				String sql="select * from message";
+				smt.execute(sql);		
+				ResultSet rs=smt.executeQuery(sql);
+				while(rs.next()){
+					out.println("<div id='mm'>");
+					out.println("<br/><h3>"+rs.getString("username")+":</h3>");
+					out.println("&nbsp;&nbsp;&nbsp;&nbsp;  "+rs.getString("a_text"));
+					out.println("<span style='color:#FF2B2B;float:right;margin-right:50px;'>删除</sapn></div>");
+				}
+
+				//ResultSet.TYPE_SCROLL_SENSITIVE//,ResultSet.CONCUR_UPDATABLE
+			
+				rs.close();
+				smt.close();
+				conn.close();
+				
+			}catch(Exception e){
+				out.print("错误！");
+				out.print(e.getMessage());
+				
+			} 
+%>
+			
+		</div>
+	</div>
+</body>
+</html>

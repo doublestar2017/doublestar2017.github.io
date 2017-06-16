@@ -1,0 +1,88 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="utf-8" import="java.sql.*"%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Min</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<style type="text/css">
+#main {
+	margin-top: -18px;
+	height: 800px;
+}
+</style>
+</head>
+<body>
+	<div class="write"></div>
+	<div id="content">
+		<div id="header"></div>
+		<div id="main">
+		
+			<div id="b">
+				<%String name=(String)session.getAttribute("me");
+					if(name==null){%>
+					<span class="btn1"></span> 
+					<span class="btn2"></span>
+					<%}else{ out.println("<br/><br/>欢迎您，"+name+"!"+"&nbsp;&nbsp;");} %>				
+			</div>
+
+			<div class="tag">
+				<hr />
+				&nbsp;&nbsp;<a href="index.jsp" style="color: white;">首页</a> / <span>HOT</span>
+				<hr />
+			</div>
+			<div class="found">
+				<input type="text" name="found" /> <span> &nbsp;&nbsp;搜索</span>
+			</div>
+			<div id="title">
+				<ul class="tle">
+					<li>这是第一篇帖子（佚名）…………………………03/29/2017</li>
+					<li>这是第二篇帖子（佚名）…………………………03/30/2017</li>
+					<li>这是第三篇帖子（佚名）…………………………04/01/2017</li>
+					<li>这是第四篇帖子（佚名）…………………………04/02/2017</li>
+					<li>这是第五篇帖子（佚名）…………………………04/08/2017</li>
+					
+
+					<%
+			try{
+				
+				request.setCharacterEncoding("utf-8");
+				
+				
+				Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+				Connection conn=DriverManager.getConnection("jdbc:odbc:BBS","","");
+				Statement
+				smt=conn.createStatement();
+				String sql="select * from register_user where username";
+				smt.execute(sql);		
+				ResultSet rs=smt.executeQuery(sql);
+				while(rs.next()){
+					out.println("<li>"+rs.getString("wt_title")+"("+rs.getString("username")+")…………………………04/20/2017</li>");
+				//	out.println("<br/><h3>"+rs.getString("username")+":</h3>");
+				//	out.println("&nbsp;&nbsp;&nbsp;&nbsp;  "+rs.getString("a_text"));
+				//	out.println("</div>");
+				}
+
+				//ResultSet.TYPE_SCROLL_SENSITIVE//,ResultSet.CONCUR_UPDATABLE
+			
+				rs.close();
+				smt.close();
+				conn.close();
+				
+			}catch(Exception e){
+				out.print("错误！");
+				out.print(e.getMessage());
+				
+			} 
+%>
+				</ul>
+			</div>
+			
+		</div>
+		<div id="footer"></div>
+	</div>
+</body>
+</html>

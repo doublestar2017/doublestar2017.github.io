@@ -1,26 +1,27 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
-<!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.0 Transitional//EN” “http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd”>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>BBS</title>
+<title>Write</title>
 <style type="text/css">
 #main {
 	height: 800px;
+	
 }
 </style>
-
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 </head>
 <body>
-	<div class="write"></div>
+
 	<div id="content">
 		<div id="header"></div>
-		<div id="main">
-			
+
+		<div id="main" style="background-image:url(./imgs/main_w.jpg)">
+		
 			<div id="b">
 				<%String name=(String)session.getAttribute("me");
 					if(name==null){%>
@@ -28,39 +29,34 @@
 					<span class="btn2"></span>
 					<%}else{ out.println("<br/><br/>欢迎您，"+name+"!"+"&nbsp;&nbsp;");} %>				
 			</div>
-
+			
 			<div class="tag">
 				<hr />
-				&nbsp;&nbsp;首页 /
+				&nbsp;&nbsp;<a href="index.jsp" style="color: white;">首页</a> / 发帖
 				<hr />
 			</div>
-			<div class="six">
-				<div class="min">
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<div class="wt">
+			
+				<form action="write_data.jsp" method="post">
+					标题：<input type="text" name="wt_title"  class="wt_title"/><br />
 					<br />
-					<br />热点
-				</div>
-				<div class="min">
+					<br /> 内容：<br />
 					<br />
-					<br />美食
-				</div>
-				<div class="min">
+					<textarea rows="20" cols="50" name="wt_text"></textarea>
 					<br />
-					<br />时尚
-				</div>
-				<div class="min">
-					<br />
-					<br />体坛
-				</div>
-				<div class="min">
-					<br />
-					<br />书籍
-				</div>
-				<div class="min">
-					<br />
-					<br />其他
-				</div>
+					<input type="submit" value="提交" name="butt" class="butt w_butt" style="margin:30px 0 0 160px;" />
+				</form>
+			
 			</div>
 		</div>
+
 		<div id="footer"></div>
 	</div>
 </body>
