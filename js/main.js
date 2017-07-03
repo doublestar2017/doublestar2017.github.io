@@ -77,16 +77,16 @@ $(document).ready(function(){
 //跳转到Min页面	
 		
 			$(".min").click(function(){
-				window.open("min.jsp");
+				window.open("min.html");
 			});
 
 			
 //登陆和注册
 			$(".btn1").click(function(){
-				window.open("login.jsp");
+				window.open("login.html");
 			});
 			$(".btn2").click(function(){
-				window.open("login.jsp");
+				window.open("login.html");
 			});
 
 
@@ -107,7 +107,7 @@ $(document).ready(function(){
 
 //min页面----文章单击事件
 			$(".tle li").click(function(){
-				window.open("artical.jsp");
+				window.open("artical.html");
 			});
 			$(".found span").click(function(){	
 				$(".found input").keyup(function(){
@@ -139,7 +139,7 @@ $(document).ready(function(){
 //发帖-----单击事件
 			$(".write").click(function(){
 
-				window.open("write.jsp");
+				window.open("write.html");
 			});
 
 
