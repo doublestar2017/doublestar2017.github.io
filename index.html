@@ -1,65 +1,311 @@
-
-<!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.0 Transitional//EN” “http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd”>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<!--[if IE 8 ]> <html class="ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9" lang="en"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="en"> <!--<![endif]--> 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>BBS</title>
-<style type="text/css">
-#main {
-	height: 800px;
-}
-</style>
-
-<link rel="stylesheet" type="text/css" href="css/style.css">
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/main.js"></script>
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+	<meta charset="UTF-8">
+	<title>星星简历</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+    <script type="text/javascript" src="js/wheel.js"></script>
 </head>
 <body>
-	<div class="write"></div>
-	<div id="content">
-		<div id="header"></div>
-		<div id="main">
-			
-			<div id="b">
-		
-					<span class="btn1"></span> 
-					<span class="btn2"></span>
-					
-			</div>
+<div id="container">
+<!-- 这是一颗灯泡 -->
+	<input type="checkbox" id="off_on">
+	<label for="off_on" class="label"><img src="images/light.png" width="40" height="120">
+		<div class="light"></div>
+	</label>
+	<div class="sign_5"><img src="images/star_light.png" width="80" height="65" alt="star"></div>
+	<div class="sign_6"><img src="images/star_light.png" width="45" height="25" alt="star"></div> 
 
-			<div class="tag">
-				<hr />
-				&nbsp;&nbsp;首页 /
-				<hr />
-			</div>
-			<div class="six">
-				<div class="min">
-					<br />
-					<br />热点
-				</div>
-				<div class="min">
-					<br />
-					<br />美食
-				</div>
-				<div class="min">
-					<br />
-					<br />时尚
-				</div>
-				<div class="min">
-					<br />
-					<br />体坛
-				</div>
-				<div class="min">
-					<br />
-					<br />书籍
-				</div>
-				<div class="min">
-					<br />
-					<br />其他
-				</div>
-			</div>
-		</div>
-		<div id="footer"></div>
+<!-- /*这是主页面*/ -->
+	<div id="index">
+        
+        <!-- 这是四颗闪烁的星 -->
+   		<div class="sign_1"><img src="images/star_light.png" width="100" height="60" alt="star"></div>
+   		<div class="sign_2"><img src="images/star_light.png" width="180" height="90" alt="star"></div>
+   		<div class="sign_3"><img src="images/star_light.png" width="110" height="70" alt="star"></div>
+   		<div class="sign_4"><img src="images/star_light.png" width="200" height="140" alt="star"></div>
+
+        <div class="index_title">My Universe</div><img src="images/me.png" class="me" alt="me">
+		<!-- 运行轨道区 -->
+   		<img class="rose" src="images/rose.png" alt="rose">
+   		<div class="robit"></div>
+		<div class="earth"></div>
+   		<div class="planet1"></div>
+   		<div class="planet2"></div>
+   		<div class="planet3"></div>
+   		<div class="planets"><img src="images/planets.png" alt="planets"></div>
+
+		<!-- 页面下滑按钮 -->
+		<div class="btn"><img src="images/btn.png" alt="btn"></div>
 	</div>
+
+<!-- /*这是个人信息页面*/ -->
+<div id="info">
+    <div id="info_side">
+ 		<!-- 这是四颗闪烁的星 -->
+   		<div class="sign_1"><img src="images/star_light.png" width="90" height="50" alt="star"></div>
+   		<div class="sign_2"><img src="images/star_light.png" width="150" height="80" alt="star"></div>
+   		<div class="sign_3"><img src="images/star_light.png" width="200" height="100" alt="star"></div>
+   		<div class="sign_4"><img src="images/star_light.png" width="180" height="100" alt="star"></div> 
+		<span class="myName">Person Information</span>
+		<img class="rose_earth" src="images/earth.png" alt="rose_earth">
+		
+		<!-- 这是自述框 -->
+		<div id="talking">
+			<img class="panel" src="images/talking.png" alt="talking">
+			<span id="cite">I Want to Say Something……</span>
+			<button id="clickMe" onclick="changeClick();">Click Me</button>
+		</div>
+		<script type="text/javascript">
+			var cite=document.getElementById('cite');
+			var clickMe=document.getElementById('clickMe');
+			function changeClick(){
+				cite.innerHTML="<p class='addCite'>我叫<span style='color:#f29d17;'>孙星星</span>，所以我洋气的英文名是DoubleStar。<br>我是个girl，一个来自<img src='images/china.png' alt='中国'>安徽安庆的girl。<br>我毕业于安徽理工大学，哦，是即将毕业。<br>我的专业是信息管理与信息系统。<br>嗯~~还有什么呢……</p>";
+					clickMe.innerHTML='Next';
+					clickMe.onclick=function(){
+						cite.innerHTML="<p class='addCite' style='font:10px;'>对了，大学三年里我曾学过<span style='color:#f29d17;'>WEB开发技术，PHP+MySQL项目<br>实例开发，JSP原理及应用，计算机网络，C语言程序设计，<br>管理学</span>等课程。我曾获得校三等奖学金和三好学生称号，<br>有英语四级和计算机三级证书。</p>";
+						clickMe.innerHTML='Continue';
+					clickMe.onclick=function(){
+						cite.innerHTML="<p class='addCite' style='font:10px;'>生活中，我的爱好挺多。动漫，电影，练书法，游戏，音乐，<br>阅读，刻章，逛网站……<br>反正我就是个喜欢捣鼓生活的人。<br><img id='love1' src='images/love1.jpg' alt='love1'>&nbsp;<img id='love2' src='images/love2.jpg' alt='love2'>&nbsp;<img id='love3' src='images/love3.jpg' alt='love3'>&nbsp;<img id='love4' src='images/love4.jpg' alt='love4'><br><span style='display:none;color:#f29d17;' id='introduce'><span></p>";
+						var introduce=document.getElementById('introduce');
+						var love1=document.getElementById('love1');
+						var love2=document.getElementById('love2');
+						var love3=document.getElementById('love3');
+						var love4=document.getElementById('love4');
+
+						function mouseOver(love,str){
+							love.onmouseover=function(){
+								introduce.style.display='block';
+								introduce.innerHTML=str;
+							}
+							love.onmouseout=function(){
+								introduce.innerHTML='';
+							}
+						}
+						mouseOver(love1,'这部漫画叫《镖人》，我追的很辛苦！');
+						mouseOver(love2,'这是日常练笔，丑萌丑萌的~');
+						mouseOver(love3,'这款生存游戏叫“饥荒”，可惜活不过10天~');
+						mouseOver(love4,'准备为自己刻个章的，仍在练习中！');												
+						clickMe.innerHTML='Finally';
+
+						clickMe.onclick=function(){
+							cite.innerHTML="<p class='addCite' style='font:10px;'>最后，报上我的联系方式。<br>手机：<span style='color:#f29d17;'>18855467493</span>，<br>e-mail:<span style='color:#f29d17;'>xingxing2huo@163.com</span>。<br>好了，以上就是我的一些个人信息了。</p>"
+							clickMe.innerHTML='End';
+							clickMe.onclick=function(){
+								cite.innerHTML="<p class='addCite' style='font:10px;'>已经是<span style='color:#f29d17;'>End</span>了哦,怎么还点呢？<br>请继续看我的web吧~<br>Thank you~</p>"
+								clickMe.style.display='none';
+							}
+						}
+					}
+				}
+				}
+		</script>
+
+ 		<!-- 页面下滑按钮 -->
+		<div class="btn"><img src="images/btn.png" alt="btn"></div>  
+	</div>
+</div>	
+
+<!-- /*这是个人经历页面，即和前端发生一些不能不说的故事*/	 -->
+<div id="exp">
+    <div id="exp_side">
+    	
+    <!-- 这是7颗闪烁的星 -->
+   		<div class="star_1"><img src="images/star_light.png" width="90" height="50" alt="star"></div>
+   		<img id="s1" src="images/s1.png" alt="s1">
+
+   		<div class="star_2"><img src="images/star_light.png" width="100" height="80" alt="star"></div>
+   		<img id="s2" src="images/s2.png" alt="s2">
+
+   		<div class="star_3"><img src="images/star_light.png" width="90" height="50" alt="star"></div>
+   		<img id="s3" src="images/s3.png" alt="s3">
+
+   		<div class="star_4"><img src="images/star_light.png" width="100" height="80" alt="star"></div>
+   		<img id="s4" src="images/s4.png" alt="s4">
+
+   		<div class="star_5"><img src="images/star_light.png" width="80" height="60" alt="star"></div>
+   		<img id="s5" src="images/s5.png" alt="s5">
+
+   		<div class="star_6"><img src="images/star_light.png" width="170" height="100" alt="star"></div>
+   		<img id="s6" src="images/s6.png" alt="s6">
+
+   		<div class="star_7"><img src="images/star_light.png" width="100" height="80" alt="star"></div>
+   		<img id="s7" src="images/s7.png" alt="s7">
+		
+ 		
+ 		<span class="myName_exp">Time Axis</span>
+ 		<img class="exp_rose_earth" src="images/earth_rose.png" alt="rose_earth">
+ 		<div id="board"></div>
+	<script type="text/javascript">
+		var board=document.getElementById('board');
+		var s1=document.getElementById('s1');
+		var s2=document.getElementById('s2');
+		var s3=document.getElementById('s3');
+		var s4=document.getElementById('s4');
+		var s5=document.getElementById('s5');
+		var s6=document.getElementById('s6');
+		var s7=document.getElementById('s7');
+
+		function onClick(s,str){
+			s.onclick=function(){
+			board.style.display='block';
+			board.innerHTML=str;}
+		}
+
+		onClick(s1,'<p class="addBoard_time">2015年4月<br><br><span>大一下学期，加入前端小组。<br>在组长的带领下学习HTML5+css3，<br>从此，前端和我有了一些不能不说<br>的故事……</span></p><span class="addBoard_esc">P.S. 点击弹出面板任意处即可退出</span>');
+
+		onClick(s2,'<p class="addBoard_time">2015年9月<br><br><span>担任前端小组副组长，向新人介绍<br>photoshop基础知识。<br><br><img src="images/ps.png" alt="ps"></span></p><span class="addBoard_esc">P.S. 点击弹出面板任意处即可退出</span>');
+
+		onClick(s3,'<h1 class="addBoard"><p class="addBoard_time">2016年3月<br><br><span>决定朝着前端工程师努力，重新<br>开始学习前端相关知识.<br><br><img src="images/hcj.png" alt="hcj"></span></p><span class="addBoard_esc">P.S. 点击弹出面板任意处即可退出</span></h1>');
+
+		onClick(s4,'<p class="addBoard_time">2017年1月<br><br><span>花费大概两周时间，完成信息网站<br>的开发与设计的课程设计。我和<br>partner合作制作一个有关校园<br>二手物品买卖的信息网站，主要以<br>修改模板为主。使用<br>html+css+php+mysql知识，后台<br>实现增删改查等基础功能。我主要<br>负责代码修改。</span><br><br><img src="images/web3.jpg" alt="web3"></p><span class="addBoard_esc">P.S. 点击弹出面板任意处即可退出</span>');
+
+		onClick(s5,'<h1 class="addBoard"><p class="addBoard_time">2016年3月<br><br><span>JSP原理及其应用的课程设计，我<br>写了一个个人BBS，使用html+css+jquery+jsp+Access等<br>知识，实现登录、注册、留言、<br>发帖等基本功能，有简单的交互界面。</span><br><br><img src="images/bbs.jpg" alt="BBS"></p><span class="addBoard_esc">P.S. 点击弹出面板任意处即可退出</span></h1>');
+		onClick(s6,'<h1 class="addBoard"><p class="addBoard_time">2016年9月<br><br><span>开始模仿简单的静态网站，主要<br>练习css+div的页面布局。练习了<br>几个类型的网页，有电商网页，<br>企业网页，娱乐网页等。</span><br><br><img src="images/web1.jpg" alt="web1"></p><span class="addBoard_esc">P.S. 点击弹出面板任意处即可退出</span></h1>');
+		onClick(s7,'<p class="addBoard_time">2017年7月<br><br><span>三大结束，即将毕业。留校近20天，<br>完成了这个网页的制作。写到这里，<br>突然发现，原来我的大学就这样<br>结束了。愿吾，历经千帆，归来<br>仍少年。<br>In me the tiger sniffs the rose.</span><br><br><img src="images/web2.jpg" alt="web2"></p><span class="addBoard_esc">P.S. 点击弹出面板任意处即可退出</span>');
+
+		board.onclick=function(){
+			board.style.display='none';
+		}
+	</script>
+
+	<!-- 页面下滑按钮 -->
+		<div class="btn"><img src="images/btn.png" alt="btn"></div>  
+   </div>
+
+</div>
+<!-- /*坦白书*/ -->
+    <div id="skill">
+    <!-- 这是四颗闪烁的星 -->
+   		<div class="sign_1"><img src="images/star_light.png" width="90" height="50" alt="star"></div>
+   		<div class="sign_2"><img src="images/star_light.png" width="150" height="80" alt="star"></div>
+   		<div class="sign_3"><img src="images/star_light.png" width="150" height="80" alt="star"></div>
+   		<div class="sign_4"><img src="images/star_light.png" width="180" height="100" alt="star"></div> 
+
+		<div id="change_before">
+			<span id="lead">End? No!</span>
+			<button id="enter">Enter</button>
+		</div>
+		
+		<div id="change_after">
+			<img src="images/dong.png" id="dong" alt="dong">
+			<img src="images/dong2.png" id="dong2" alt="dong">
+			<img src="images/dong_click.png" id="dong_btn" alt="dong_btn">
+			<button id="continue">Back</button>
+				<p id="word_start">我的坦白书</p>
+			<div id="word_all">
+				<p id="word1">我热爱生活，是个有idea的人</p>
+				<p id="word2">我有着单蠢单蠢的执着</p>
+				<p id="word3">我性格有些慢热，人前内敛，人后话唠</p>
+				<p id="word4">我容易在兴趣里沉沦</p>
+				<p id="word5">我爱思考，天马行空般的神游</p>
+				<p id="word6">我向往团队生活</p>
+				<p id="word7">我相信动手实践总能带来收获</p>
+				<p id="word8">自控力不错，朝着自律前进</p>
+				<p id="word9">总是被人说成乐天派</p>
+				<p id="word10">能够独立的处理事情</p>
+				<p id="word11">喜欢主动性的学习</p>
+				<p id="word12">睡货不是吃货</p>
+				<p id="word13">人无完人嘛，缺点就不写啦</p>
+			</div>
+			<!-- <p id="word14">远看我只是一点微弱的星光；近看，我是一颗大大的恒星</p> -->
+			<p id="end"></p>
+			<img src="images/talking1.png" alt="add" id="add_shadow">
+			<img src="images/1.png" alt="1" id="pic_1" class="shadow">
+			<img src="images/2.png" alt="2" id="pic_2" class="shadow">
+			<img src="images/3.png" alt="3" id="pic_3" class="shadow">
+			<img src="images/4.png" alt="4" id="pic_4" class="shadow">
+			<img src="images/5.png" alt="5" id="pic_5" class="shadow">
+			<img src="images/6.png" alt="6" id="pic_6" class="shadow">
+			<img src="images/7.png" alt="7" id="pic_7" class="shadow">
+			<img src="images/8.png" alt="8" id="pic_8" class="shadow">
+
+		</div>
+		<script type="text/javascript">
+			var skill=document.getElementById('skill');
+			var add_shadow=document.getElementById('add_shadow');
+			var before=document.getElementById('change_before');
+			var after=document.getElementById('change_after');
+			var lead=document.getElementById('lead');
+			var enter=document.getElementById('enter');
+			enter.onclick=function(){
+				skill.style.background='none';
+				before.style.display='none';
+				after.style.display='block';
+
+ 			function $(id){return document.getElementById(id);}
+			var word_all=document.getElementById('word_all');
+			var dong_btn=document.getElementById('dong_btn');
+			var continue1=document.getElementById('continue');
+			
+			dong_btn.onclick=function(){
+				$('word1').style.display='block';
+				setTimeout(function(){
+					$('word2').style.display='block';
+					$('pic_1').style.display='block';},1000);
+			
+				setTimeout(function(){
+					$('word3').style.display='block';
+					$('word10').style.display='block';
+					$('pic_4').style.display='block';},2000);
+			
+				setTimeout(function(){
+					$('word4').style.display='block';
+					$('pic_6').style.display='block';},3000);
+		
+				setTimeout(function(){
+					$('word5').style.display='block';
+					$('word9').style.display='block';
+					$('pic_2').style.display='block';},4000);
+			
+				setTimeout(function(){
+					$('word6').style.display='block';
+					$('pic_7').style.display='block';},5000);
+			
+				setTimeout(function(){
+					$('word7').style.display='block';
+					$('word11').style.display='block';
+					$('pic_3').style.display='block';},6000);
+			
+				setTimeout(function(){
+					$('word8').style.display='block';
+					$('pic_5').style.display='block';},7000);	
+			
+				setTimeout(function(){
+					$('word12').style.display='block';},8000);
+			
+				setTimeout(function(){
+					$('word13').style.display='block';
+					$('pic_8').style.display='block';
+					add_shadow.style.display='block';
+					dong_btn.style.display='none';
+					continue1.style.display='block';
+					continue1.onclick=function(){
+
+						skill.style.background='url(images/bg.png) no-repeat center';
+						before.style.display='block';
+						after.style.display='none';
+						enter.style.display='none';
+						lead.className='addLead';
+						lead.innerHTML="<p class='addLead'>Give me a chance,<br>I will send infinite<br> starlight!<br>Thank You!</p>";
+		}},9000);
+			}	
+		}
+		
+		
+		</script>
+
+
+      <!-- 页面下滑按钮 -->
+		<div class="skill_btn"><img src="images/btn.png" alt="btn"></div>
+    </div>
+
+</div>
+
 </body>
 </html>
